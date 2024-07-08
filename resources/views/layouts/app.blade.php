@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; Global Sahabat Otomsi. All rights reserved.
+            &copy; Global Sahabat Otomasi. All rights reserved.
         </div>
     </footer>
     <div class="whatsapp-button">

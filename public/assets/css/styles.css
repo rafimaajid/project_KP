@@ -452,6 +452,57 @@ body {
     width: 100%;
 }
 
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+    .availability-section, .contact-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .availability-section img, .availability-section .text {
+        max-width: 100%;
+        margin: 0;
+    }
+    .contact-info, .contact-form {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+    }
+}
+
+/* Responsif untuk hp */
+@media (max-width: 480px) {
+    .header .nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+    .availability-section h2, .contact-info h2, .contact-form h2 {
+        font-size: 20px;
+    }
+    .availability-section p, .contact-info p, .contact-form p {
+        font-size: 14px;
+    }
+    .footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .column {
+        margin: 10px 0;
+    }
+}
+
+/* Responsif untuk laptop */
+@media (max-width: 1024px) {
+    .header .nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+    .availability-section, .contact-section {
+        padding: 30px;
+    }
+}
+
 
 /* Dibawah ini kodingan css Product page*/
 body {
@@ -580,4 +631,74 @@ body {
     font-size: 14px;
     color: rgb(228, 232, 234);
     width: 100%;
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+    .catalog-section {
+        padding: 30px;
+    }
+    .product-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .header .nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+    .catalog-category h2 {
+        font-size: 20px;
+    }
+    .catalog-category p {
+        font-size: 14px;
+    }
+    .product-item h3 {
+        font-size: 16px;
+    }
+    .product-item p {
+        font-size: 12px;
+    }
+    .footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .column {
+        margin: 10px 0;
+    }
+}
+
+/* Responsif untuk hp */
+@media (max-width: 480px) {
+    .catalog-section {
+        padding: 20px;
+    }
+    .product-item {
+        flex: 1 1 100%;
+    }
+    .header .nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+    .catalog-category h2 {
+        font-size: 18px;
+    }
+    .catalog-category p {
+        font-size: 12px;
+    }
+    .product-item h3 {
+        font-size: 14px;
+    }
+    .product-item p {
+        font-size: 10px;
+    }
+}
+
+/* Responsif untuk laptop */
+@media (max-width: 1024px) {
+    .header .nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+    .catalog-section {
+        padding: 40px;
+    }
 }
