@@ -124,8 +124,14 @@
             color: white;
             padding: 40px 20px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer .footer-content {
+            display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            width: 100%;
         }
         .footer .logo {
             max-width: 200px;
@@ -163,16 +169,15 @@
         .footer .social-media a {
             margin: 0 10px;
             text-decoration: none;
-        }
-        .footer .social-media a img {
-            height: 20px;
-            width: auto;
+            color: white;
+            font-size: 20px;
         }
         .footer-bottom {
             text-align: center;
             margin-top: 20px;
             font-size: 14px;
-            color: rgb(89, 78, 182);
+            color: rgb(228, 232, 234);
+            width: 100%;
         }
     </style>
 </head>
@@ -231,34 +236,39 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="column">
-            <img src="{{ asset('assets/img/footer-logo.png') }}" alt="logo" class="logo">
+        <div class="footer-content">
+            <div class="column">
+                <img src="assets/img/footer-logo.png" alt="logo" class="logo">
+            </div>
+            <div class="column">
+                <h3>About Us</h3>
+                <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/products') }}">Products</a></li>
+                    <li><a href="{{ url('/article') }}">Article</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Our Location</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
+                <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
+            </div>
+            <div class="column social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
-        <div class="column">
-            <h3>About Us</h3>
-            <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
-        </div>
-        <div class="column">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="{{ url('/home') }}">Home</a></li>
-                <li><a href="{{ url('/products') }}">Products</a></li>
-                <li><a href="{{ url('/article') }}">Article</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h3>Our Location</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
-            <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
-            <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
-        </div>
-        <div class="column social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="footer-bottom">
+            &copy; Global Sahabat Otomasi. All rights reserved.
         </div>
     </footer>
 </body>

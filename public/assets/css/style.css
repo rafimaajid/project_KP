@@ -319,8 +319,14 @@ body {
     color: white;
     padding: 40px 20px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .footer-content {
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 }
 .footer .logo {
     max-width: 200px;
@@ -358,34 +364,92 @@ body {
 .footer .social-media a {
     margin: 0 10px;
     text-decoration: none;
-}
-.footer .social-media a img {
-    height: 20px;
-    width: auto;
+    color: white;
+    font-size: 20px;
 }
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
-    color: rgb(89, 78, 182);
+    color: rgb(228, 232, 234);
+    width: 100%;
 }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            padding: 10px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .whatsapp-button a {
-            color: white;
-            text-decoration: none;
-            font-size: 30px;
-        }
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.whatsapp-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .header img {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .nav {
+        margin-right: 0;
+    }
+    .nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+    .availability-section, .about-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .availability-section .text, .about-section .text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    .header img {
+        width: 150px;
+    }
+    .nav a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    .availability-section, .about-section {
+        padding: 10px;
+    }
+    .availability-section h2, .about-section h2, .growth-section h2, .fifth-section h2 {
+        font-size: 24px;
+    }
+    .availability-section p, .about-section p, .growth-section p, .fifth-section p {
+        font-size: 16px;
+    }
+    .growth-section .phones img {
+        width: 100px;
+    }
+    .footer .column {
+        margin: 10px 0;
+    }
+    .footer .column h3 {
+        font-size: 16px;
+    }
+    .footer .column p, .footer .column a {
+        font-size: 12px;
+    }
+}

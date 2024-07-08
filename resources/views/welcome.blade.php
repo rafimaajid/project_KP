@@ -144,38 +144,40 @@
         </a>
     </div>
     <footer class="footer">
-        <div class="column">
-            <img src="assets/img/footer-logo.png" alt="logo" class="logo">
-        </div>
-        <div class="column">
-            <h3>About Us</h3>
-            <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
-        </div>
-        <div class="column">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="{{ url('/home') }}">Home</a></li>
-                <li><a href="{{ url('/products') }}">Products</a></li>
-                <li><a href="{{ url('/article') }}">Article</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h3>Our Location</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
-            <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
-            <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
-        </div>
-        <div class="column social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <div class="footer-content">
+            <div class="column">
+                <img src="assets/img/footer-logo.png" alt="logo" class="logo">
+            </div>
+            <div class="column">
+                <h3>About Us</h3>
+                <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/products') }}">Products</a></li>
+                    <li><a href="{{ url('/article') }}">Article</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Our Location</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
+                <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
+            </div>
+            <div class="column social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Global Sahabat Otomasi. All rights reserved.
         </div>
     </footer>
-    <div class="footer-bottom">
-        &copy; Global Sahabat Otomsi. All rights reserved.
-    </div>
 </body>
 </html>

@@ -150,8 +150,14 @@
             color: white;
             padding: 40px 20px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer .footer-content {
+            display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            width: 100%;
         }
         .footer .logo {
             max-width: 200px;
@@ -189,16 +195,94 @@
         .footer .social-media a {
             margin: 0 10px;
             text-decoration: none;
-        }
-        .footer .social-media a img {
-            height: 20px;
-            width: auto;
+            color: white;
+            font-size: 20px;
         }
         .footer-bottom {
             text-align: center;
             margin-top: 20px;
             font-size: 14px;
-            color: rgb(89, 78, 182);
+            color: rgb(248, 248, 255);
+            width: 100%;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            .header img {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            .nav {
+                margin-right: 0;
+            }
+            .nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+            .availability-section, .about-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .availability-section .text, .about-section .text {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px;
+            }
+            .header img {
+                width: 150px;
+            }
+            .nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+            .availability-section, .about-section {
+                padding: 10px;
+            }
+            .availability-section h2, .about-section h2, .growth-section h2, .fifth-section h2 {
+                font-size: 24px;
+            }
+            .availability-section p, .about-section p, .growth-section p, .fifth-section p {
+                font-size: 16px;
+            }
+            .growth-section .phones img {
+                width: 100px;
+            }
+            .footer .column {
+                margin: 10px 0;
+            }
+            .footer .column h3 {
+                font-size: 16px;
+            }
+            .footer .column p, .footer .column a {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -279,38 +363,45 @@
         <p>Mulai transformasi digital Anda dengan AddCloud sekarang dan rasakan kemudahan dalam mengelola data bisnis Anda. Tingkatkan efisiensi, kurangi biaya operasional, dan pastikan bisnis Anda selalu siap menghadapi tantangan masa depan dengan AddCloud!</p>
     </div>
     <footer class="footer">
-        <div class="column">
-            <img src="{{ asset('assets/img/footer-logo.png') }}" alt="logo" class="logo">
+        <div class="footer-content">
+            <div class="column">
+                <img src="assets/img/footer-logo.png" alt="logo" class="logo">
+            </div>
+            <div class="column">
+                <h3>About Us</h3>
+                <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/products') }}">Products</a></li>
+                    <li><a href="{{ url('/article') }}">Article</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Our Location</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
+                <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
+            </div>
+            <div class="column social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
-        <div class="column">
-            <h3>About Us</h3>
-            <p>We‘re AddCloud – your go-to hub when you need more than just storage. We’ve got the cumulus of data handling!</p>
-        </div>
-        <div class="column">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="{{ url('/home') }}">Home</a></li>
-                <li><a href="{{ url('/products') }}">Products</a></li>
-                <li><a href="{{ url('/article') }}">Article</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h3>Our Location</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Jl. Krekot Bunder Raya 11A, RT/RW: 004/06 Pasar Baru, Sawah Besar - Jakarta Pusat 10710</p>
-            <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
-            <p><i class="fas fa-envelope"></i> addcloud@gmail.com</p>
-        </div>
-        <div class="column social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="footer-bottom">
+            &copy; Global Sahabat Otomsi. All rights reserved.
         </div>
     </footer>
-    <div class="footer-bottom">
-        &copy; Global Sahabat Otomasi. All rights reserved.
+    <div class="whatsapp-button">
+        <a href="https://wa.me/6282133902077" target="_blank">
+            <img src="assets/img/logo-wa.jpg" alt="WhatsApp" style="width: 30px; height: 30px;">
+        </a>
     </div>
 </body>
 </html>
