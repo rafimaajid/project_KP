@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 </head>
 <body>
     <div class="header">
@@ -17,11 +17,13 @@
             <a href="{{ url('/contact') }}">Contact</a>
         </div>
     </div>
+
     @yield('content')
+
     <footer class="footer">
         <div class="footer-content">
             <div class="column">
-                <img src="assets/img/footer-logo.png" alt="logo" class="logo">
+                <img src="{{ asset('assets/img/footer-logo.png') }}" alt="logo" class="logo">
             </div>
             <div class="column">
                 <h3>About Us</h3>
@@ -54,11 +56,11 @@
             &copy; Global Sahabat Otomasi. All rights reserved.
         </div>
     </footer>
+
     <div class="whatsapp-button">
         <a href="https://wa.me/6282133902077" target="_blank">
-            <img src="assets/img/logo-wa.jpg" alt="WhatsApp" style="width: 30px; height: 30px;">
+            <img src="{{ asset('assets/img/logo-wa.jpg') }}" alt="WhatsApp" style="width: 30px; height: 30px;">
         </a>
     </div>
 </body>
 </html>
-

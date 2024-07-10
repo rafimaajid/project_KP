@@ -8,7 +8,431 @@ class ProductController extends Controller
 {
     public function product()
     {
+        // Mungkin Anda ingin mengambil data produk dari database
+        // Untuk contoh ini, kita akan menggunakan data statis seperti di blade
+        $categories = [
+            [
+                'name' => 'Personal Cloud Server',
+                'description' => 'Ultra-high performance, all-flash storage solutions for latency-sensitive workloads.',
+                'products' => [
+                    [
+                        'name' => 'FS3600',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            '2.2 GHz, Turbo Boost up to 3.2 GHz',
+                            'DDR4 ECC UDIMM',
+                            'Scale up to 72 SATA/SSD',
+                        ],
+                    ],
+                    [
+                        'name' => 'FS3410',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Over 100,000 iSCSI 4K random write IOPS',
+                            '2.5" SATA drive bays',
+                        ],
+                    ],
+                    [
+                        'name' => 'FS2500',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Over 80,000 iSCSI 4K random write IOPS',
+                            '2.5" SATA drive bays',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Family Cloud Server',
+                'description' => 'High performance storage solutions for businesses, engineered for reliability.',
+                'products' => [
+                    [
+                        'name' => 'RS4021xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Over 2344/6214 MB/s read/write',
+                            'Built-in dual PSU',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3621xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Intel Xeon 6-core processor',
+                            'Dual SAS ports',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3621RPxs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Intel Xeon 6-core processor',
+                            'Redundant power',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS1619xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.1 GHz CPU',
+                            'DDR4 ECC SODIMM',
+                        ],
+                    ],
+                    [
+                        'name' => 'DS3622xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.1 GHz CPU',
+                            'Scale up to 36 drives',
+                        ],
+                    ],
+                    [
+                        'name' => 'DS1823xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Dual 10GbE ports',
+                            'Built-in M.2 NVMe slots',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Company Cloud Server',
+                'description' => 'Accelerate data management with expanded data protection and management capabilities.',
+                'products' => [
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                    [
+                        'name' => 'RS3618xs',
+                        'image' => 'FS3600.jpeg',
+                        'specs' => [
+                            'Quad-core 2.4 GHz CPU',
+                            'Expandable memory up to 64 GB',
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
-        return view('products');
+        return view('products', compact('categories'));
+    }
+    public function show($productName)
+    {
+        // Data produk dapat diambil dari database atau sebagai contoh menggunakan array
+        $products = [
+            'FS3410' => [
+                'name' => 'FS3410',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'FS2500' => [
+                'name' => 'FS2500',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'FS3600' => [
+                'name' => 'FS3600',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'RS4021xs' => [
+                'name' => 'RS4021xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'RS3621xs' => [
+                'name' => 'RS3621xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'RS3621RPxs' => [
+                'name' => 'RS3621RPxs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'RS1619xs' => [
+                'name' => 'RS1619xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'DS3622xs' => [
+                'name' => 'DS3622xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'DS1823xs' => [
+                'name' => 'DS1823xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+            'RS3618xs' => [
+                'name' => 'RS3618xs',
+                'image' => 'FS3600.jpeg',
+                'features' => [
+                    'Safety and Protecting Data Share',
+                    'File Server & Data Share',
+                    'Protection and Fast',
+                    'Centralized Storage',
+                    'Expand and Manage Storage',
+                ],
+                'description' => [
+                    'Multi-device access' => [
+                        'desc' => 'Memungkinkan akses dan sinkronisasi data secara real-time di berbagai perangkat seperti komputer, laptop, tablet, dan Smartphone, yang meningkatkan fleksibilitas dan produktivitas kerja. Dengan fitur ini, pengguna dapat memulai pekerjaan di satu perangkat dan melanjutkannya di perangkat lain tanpa kehilangan data, mendukung kolaborasi tim yang lebih baik dengan data yang selalu terbarui.Data yang disimpan di cloud dilindungi oleh protokol keamanan yang kuat dan secara otomatis dicadangkan, mengurangi risiko kehilangan data akibat perangkat rusak atau hilang. Selain itu, cloud multi device menyederhanakan pengelolaan data, memungkinkan kemudahan akses dari mana saja, dan mendukung mobilitas, sehingga pengguna dapat bekerja dengan perangkat apa pun yang tersedia. Jika terjadi masalah perangkat keras, data tetap aman di cloud dan dapat diakses dari perangkat lain, memastikan kelangsungan bisnis dan mengurangi downtime.',
+                        'img' => 'MultiDeviceAccess.jpg'
+                    ],
+                    'Cross-Platform Sharing' => [
+                        'desc' => 'Berbagi dan mengakses data secara universal di berbagai perangkat dan sistem operasi, seperti Windows, macOS, Linux, Android, dan iOS, tanpa terhalang oleh perbedaan platform. Fitur ini meningkatkan fleksibilitas dan kenyamanan, karena data dapat diakses dari perangkat apa pun yang tersedia, serta mendukung kolaborasi tim yang lebih efisien tanpa batasan perangkat.Dengan mengurangi kebutuhan untuk membeli perangkat tambahan atau perangkat lunak khusus, Cross-Platform Sharing juga menghemat biaya operasional. Selain itu, data yang dibagikan tetap terlindungi dengan protokol keamanan yang konsisten di semua perangkat, menjamin keamanan dan kemudahan pengelolaan data, sehingga pengguna selalu memiliki akses ke versi terbaru dari file mereka.',
+                        'img' => 'CrossPlatformSharing.jpg'
+                    ],
+                    'Recovery Data' => [
+                        'desc' => 'Kami menyediakan solusi cepat, aman, dan efisien untuk memulihkan data yang hilang, rusak, atau terhapus akibat kesalahan pengguna, kegagalan perangkat keras, serangan malware, atau bencana alam. Fitur ini memastikan bahwa data penting dapat segera dikembalikan, mengurangi downtime dan memastikan kelangsungan bisnis.Dengan cadangan data yang otomatis dan konsisten, pengguna dapat mengandalkan titik pemulihan yang dapat diandalkan untuk menghindari kehilangan informasi berharga. Selain itu, pemulihan data dari cloud melindungi bisnis dari ancaman ransomware tanpa harus membayar tebusan, memastikan bahwa operasi bisnis dapat dilanjutkan dengan cepat meskipun terjadi insiden.',
+                        'img' => 'RecoveryData.jpg'
+                    ],
+                ],
+            ],
+        ];
+
+        if (array_key_exists($productName, $products)) {
+            $product = $products[$productName];
+            return view('Show', compact('product'));
+        } else {
+            abort(404);
+        }
     }
 }
+
+

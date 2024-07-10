@@ -171,8 +171,7 @@
                     @foreach($category['products'] as $product)
                         <div class="product-item">
                             <img src="{{ asset('assets/img/' . $product['image']) }}" alt="{{ $product['name'] }}">
-                            <h3><a href="{{ url('/products/' . $product['name']) }}">{{ $product['name'] }}</a></h3>
-                            @foreach($product['specs'] as $spec)
+                            <h3><a href="{{ route('show', $product['name']) }}">{{ $product['name'] }}</a></h3>                            @foreach($product['specs'] as $spec)
                                 <p>{{ $spec }}</p>
                             @endforeach
                         </div>

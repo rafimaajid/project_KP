@@ -38,7 +38,6 @@
                 ["img" => "assets/img/CentralizedStorage.jpeg", "title" => "Centralized Storage", "desc" => "Menyediakan penyimpanan terpusat untuk pengelolaan data yang efisien"],
                 ["img" => "assets/img/ExpandStorage.jpeg", "title" => "Expand and Manage Storage", "desc" => "Add Cloud memungkinkan Anda untuk memperluas dan mengelola kapasitas penyimpanan sesuai kebutuhan"]
             ];
-
             foreach ($features as $feature) {
                 echo '<div class="feature-item">';
                 echo '<img src="' . $feature['img'] . '" alt="' . $feature['title'] . '">';
