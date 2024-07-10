@@ -10,6 +10,7 @@
     </div>
     <img src="{{ asset('assets/img/availability.png') }}" alt="High Availability">
 </div>
+
 <div class="product-header">
     <div class="product-title">
         <h1>{{ $product['name'] }}</h1>
@@ -19,11 +20,13 @@
         <img src="{{ asset('assets/img/' . $product['image']) }}" alt="{{ $product['name'] }}">
     </div>
 </div>
+
 <div class="product-navigation">
     <ul>
         <li><a href="#features">Features</a></li>
     </ul>
 </div>
+
 <div class="features-section">
     <h2>Protect your data at all times</h2>
     <p>Menggabungkan dan mencadangkan seluruh data digital Anda ke dalam satu platform. Melindungi dari serangan ransomware dan ancaman lainnya, serta memulihkan data penting dengan cepat jika terjadi penghapusan atau kehilangan tidak sengaja, guna memastikan kelangsungan bisnis.</p>
@@ -37,6 +40,7 @@
             ["img" => "ExpandStorage.jpeg", "title" => "Expand and Manage Storage", "desc" => "Add Cloud memungkinkan Anda untuk memperluas dan mengelola kapasitas penyimpanan sesuai kebutuhan"]
         ];
         @endphp
+
         @foreach ($features as $feature)
             <div class="feature-item">
                 <img src="{{ asset('assets/img/' . $feature['img']) }}" alt="{{ $feature['title'] }}">
@@ -45,6 +49,7 @@
             </div>
         @endforeach
     </div>
+
 </div>
 <div class="product-features">
     @foreach($product['description'] as $title => $feature)
