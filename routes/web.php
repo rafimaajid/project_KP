@@ -17,6 +17,8 @@ Route::get('/contact', function () {
 // Bagian Product
 Route::get('/products', [ProductController::class, 'product']);
 Route::get('/products/{productName}', [ProductController::class, 'Show'])->name('show');
+Route::get('/products/{productName}/specs', [ProductController::class, 'specs'])->name('specs');
+
 // Bagian Article
 Route::get('/article', function () {
     return view('article');

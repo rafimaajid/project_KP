@@ -433,6 +433,196 @@ class ProductController extends Controller
             abort(404);
         }
     }
+
+    // ProductController.php Specs
+public function specs($productName)
+{
+    $product = $this->getProductByName($productName);
+
+    if (!array_key_exists('specs', $product)) {
+        // Jika kunci specs tidak ada, buat array kosong atau tangani dengan cara lain
+        $product['specs'] = [
+            'Capacity' => 'No data available',
+            'Connector' => 'No data available',
+            'System requirements' => 'No data available',
+            'Add Cloud Home Mobile App' => 'No data available',
+            'Compatibility' => 'No data available',
+            'Supported Browsers' => 'No data available',
+            'Supported Streaming Options' => 'No data available',
+            'Note' => 'No data available'
+        ];
+    }
+
+    return view('specs', compact('product'));
+}
+
+// Pastikan Anda memiliki metode getProductByName yang mengembalikan produk berdasarkan nama
+    private function getProductByName($productName)
+{
+    // Contoh data produk, sesuaikan dengan data aktual Anda
+    $products = [
+        [
+            'name' => 'FS2500',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'FS3600',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'FS3410',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'RS4021xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'RS3621xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'RS3621RPxs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'RS1619xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'DS3622xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'DS1823xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+        [
+            'name' => 'RS3618xs',
+            'image' => 'FS3600.jpeg',
+            'description' => 'Description of Product 1',
+            'specs' => [
+                'Capacity' => '4TB',
+                'Connector' => 'USB-A, Ethernet RJ45, Power Supply',
+                'System requirements' => 'Windows® 10+ macOS 12+',
+                'Add Cloud Home Mobile App' => 'iOS® 15+ operating systems Android™ 8+ operating systems Router and Internet Service Provider for Internet connection',
+                'Compatibility' => 'Internet Explorer 11+ Microsoft Edge 10.10514+ Safari 8.9+ Firefox® 50+ Google Chrome™ 50+',
+                'Supported Browsers' => 'H.264 via Android and iOS media playback H.265 via Android and iOS media playback',
+                'Supported Streaming Options' => 'No data available',
+                'Note' => 'Compatibility may vary depending on user’s hardware configuration and operating system'
+            ]
+        ],
+    ];
+
+    foreach ($products as $product) {
+        if ($product['name'] === $productName) {
+            return $product;
+        }
+    }
+
+    abort(404); // Jika produk tidak ditemukan, kembalikan halaman 404
+}
+
+
 }
 
 

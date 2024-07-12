@@ -11,10 +11,10 @@
     <div class="header">
         <img src="{{ asset('assets/img/logo.png') }}" alt="Global" height="50">
         <div class="nav">
-            <a href="{{ url('/home') }}">Home</a>
-            <a href="{{ url('/products') }}">Product</a>
-            <a href="{{ url('/article') }}">Article</a>
-            <a href="{{ url('/contact') }}">Contact</a>
+            <a href="{{ url('/home') }}" class="{{ request()->is('home') ? 'active' : '' }}">Home</a>
+            <a href="{{ url('/products') }}" class="{{ request()->is('products') ? 'active' : '' }}">Product</a>
+            <a href="{{ url('/article') }}" class="{{ request()->is('article') ? 'active' : '' }}">Article</a>
+            <a href="{{ url('/contact') }}" class="{{ request()->is('contact') ? 'active' : '' }}">Contact</a>
         </div>
     </div>
 

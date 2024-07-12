@@ -10,8 +10,31 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
 .header img {
-    margin-left: 20px;
+    height: 50px;
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header .nav a.active {
+    background-color: #1a2b6d;
+    border-radius: 5px;
+}
+
+.header .nav a:hover {
+    background-color: #1a2b6d;
+    color: #fff;
 }
 .nav {
     margin-right: 20px;
@@ -1006,5 +1029,35 @@ body {
 }
 
 
+.specs-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
+.specs-section h2 {
+    margin-bottom: 20px;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-table th, .specs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.specs-table th {
+    background-color: #f2f2f2;
+}
+
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
 

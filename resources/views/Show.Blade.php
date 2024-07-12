@@ -24,7 +24,7 @@
 <div class="product-navigation">
     <ul>
         <li><a href="#features">Features</a></li>
-    </ul>
+        <li><a href="{{ route('specs', $product['name']) }}">Specs</a></li>    </ul>
 </div>
 
 <div class="features-section">
