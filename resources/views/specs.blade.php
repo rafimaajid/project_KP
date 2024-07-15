@@ -62,4 +62,11 @@
     </table>
     <p class="note">{{ $product['specs']['Note'] }}</p>
 </div>
+<div class="cart-button-container">
+    <form action="{{ route('transaction') }}" method="get">
+        <input type="hidden" name="product" value="{{ $product['name'] }}">
+        @csrf
+        <button type="submit" class="btn btn-primary" id="addToCartBtn">Buy</button>
+    </form>
+</div>
 @endsection

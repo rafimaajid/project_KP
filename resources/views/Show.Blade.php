@@ -24,7 +24,8 @@
 <div class="product-navigation">
     <ul>
         <li><a href="#features">Features</a></li>
-        <li><a href="{{ route('specs', $product['name']) }}">Specs</a></li>    </ul>
+        <li><a href="{{ route('specs', $product['name']) }}">Specs</a></li>
+    </ul>
 </div>
 
 <div class="features-section">
@@ -40,7 +41,6 @@
             ["img" => "ExpandStorage.jpeg", "title" => "Expand and Manage Storage", "desc" => "Add Cloud memungkinkan Anda untuk memperluas dan mengelola kapasitas penyimpanan sesuai kebutuhan"]
         ];
         @endphp
-
         @foreach ($features as $feature)
             <div class="feature-item">
                 <img src="{{ asset('assets/img/' . $feature['img']) }}" alt="{{ $feature['title'] }}">
