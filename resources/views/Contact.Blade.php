@@ -34,8 +34,7 @@
         </div>
         <div class="contact-form">
             <h2>Send us a message</h2>
-            <form action="{{ url('/send-message') }}" method="POST">
-                @csrf
+            <form action="mailto:putramaajid93@gmail.com" method="get">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name" placeholder="Last Name" required>
                 <input type="email" name="email" placeholder="Email" required>

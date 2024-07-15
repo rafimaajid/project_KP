@@ -56,7 +56,6 @@
             &copy; Global Sahabat Otomasi. All rights reserved.
         </div>
     </footer>
-
     <div class="whatsapp-button">
         <a href="https://wa.me/6282133902077" target="_blank">
             <img src="{{ asset('assets/img/logo-wa.jpg') }}" alt="WhatsApp" style="width: 30px; height: 30px;">
